@@ -6,18 +6,24 @@ function checkWallCollisions() {
   if (ballX <= 9) {
     ballX = 9;
     ballSpeedX = Math.abs(ballSpeedX);
+    playWallSound();
   }
 
   // PARED DERECHA
   if (ballX >= gameWidth - 9) {
     ballX = gameWidth - 9;
     ballSpeedX = -Math.abs(ballSpeedX);
+
+    playWallSound();
+
   }
 
   // TECHO
   if (ballY <= 9) {
     ballY = 9;
     ballSpeedY = Math.abs(ballSpeedY);
+    playWallSound();
+
   }
 
 }
@@ -47,7 +53,8 @@ function checkPaddleCollision() {
 
     ballSpeedY = -Math.abs(ballSpeedY);
     addHit();
-    
+    playPaddleSound();
+
 
   }
 
