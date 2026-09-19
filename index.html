@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ReQuemada</title>
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/game.css">
+  <link rel="stylesheet" href="css/ui.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header>
+      <h1>ReQuemada</h1>
+      <p>BAJÁ UN CAMBIO</p>
+    </header>
+
+    <div id="game">
+  
+      <div id="score">0</div>
+      <div id="ball"></div>
+      <div id="paddle"></div>
+      
+      <button id="restart">
+    START
+      </button>
+
+
+
+
+</div>
+  </main>
+
+  <script src="js/config.js"></script>
+
+  <script src="js/game/ball.js"></script>
+  <script src="js/game/paddle.js"></script>
+
+  <script src="js/ui/score.js"></script>
+
+  <script src="js/game/collisions.js"></script>
+  <script src="js/game/state.js"></script>
+  <script src="js/game/loop.js"></script>
+
+  <script src="js/input/mouse.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

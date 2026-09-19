@@ -1,0 +1,60 @@
+header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+header p {
+  margin: 8px 0 0;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+#score {
+  position: absolute;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+
+  opacity: 0.5;
+
+  user-select: none;
+}
+
+#restart {
+  position: absolute;
+
+  left: 50%;
+  bottom: 70px;
+
+  transform: translateX(-50%);
+
+  padding: 8px 18px;
+
+  border: 1px solid #fff;
+  border-radius: 20px;
+
+  background: transparent;
+  color: #fff;
+
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+}
