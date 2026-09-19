@@ -6,8 +6,10 @@
 
   overflow: hidden;
 
-  background: #111;
-  border-radius: 4px;
+  background:
+  url("../assets/backgrounds/clouds-sky.png")
+  center / cover
+  no-repeat;
 }
 
 #ball {
@@ -38,4 +40,123 @@
 
   background: #fff;
   border-radius: 20px;
+}
+
+#clouds-back {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    url("../assets/backgrounds/clouds-back.png")
+    center / cover
+    repeat-x;
+
+  opacity: 0.45;
+
+  pointer-events: none;
+
+  animation:
+  cloudsBackMove 90s
+  ease-in-out
+  infinite
+  alternate;
+}
+
+@keyframes cloudsBackMove {
+
+  from {
+    background-position: 0 center;
+  }
+
+  to {
+    background-position: 100% center;
+  }
+
+}
+
+
+#clouds-front {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    url("../assets/backgrounds/clouds-front.png")
+    center / cover
+    repeat-x;
+
+  opacity: 0.30;
+
+  pointer-events: none;
+
+  animation:
+    cloudsFrontMove 14s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes cloudsFrontMove {
+
+  from {
+    background-position: -5% center;
+  }
+
+  to {
+    background-position: 8% center;
+  }
+
+}
+
+#sky-cycle {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    url("../assets/backgrounds/sky-cycle.png");
+
+  background-size: auto 100%;
+  background-position: left center;
+  background-repeat: repeat-x;
+
+  opacity: 0.55;
+
+  mix-blend-mode: color;
+
+  pointer-events: none;
+
+  animation:
+    skyCycleMove 300s
+    linear
+    infinite;
+}
+
+@keyframes skyCycleMove {
+
+  from {
+    background-position: 0 center;
+  }
+
+  to {
+    background-position: -2048px center;
+  }
+
+}
+
+#light-haze {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(255, 245, 220, 0.22),
+      rgba(255, 245, 220, 0.08) 35%,
+      transparent 70%
+    );
+
+  opacity: 0.5;
+
+  pointer-events: none;
 }
