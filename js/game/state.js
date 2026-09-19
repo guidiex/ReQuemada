@@ -2,6 +2,8 @@ let gameRunning = false;
 
 function startGame() {
 
+playStartSound();
+
   // Pelota al centro
   ballX = game.clientWidth / 2;
   ballY = game.clientHeight / 2;
@@ -32,11 +34,14 @@ function checkGameOver() {
   const gameHeight = game.clientHeight;
 
   if (ballY > gameHeight + 20) {
-
+  
     gameRunning = false;
-
+  
+    playLoseSound();
+  
     restartButton.style.display = "block";
-
+  
   }
+  
 
 }

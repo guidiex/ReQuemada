@@ -71,3 +71,25 @@ function playWallSound() {
   );
 
 }
+
+function playStartSound() {
+
+  playTone(
+    220,
+    440,
+    0.18,
+    0.12
+  );
+
+}
+
+function playLoseSound() {
+
+  playTone(
+    160,
+    70,
+    0.45,
+    0.12
+  );
+
+}
