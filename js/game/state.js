@@ -3,6 +3,7 @@ let gameRunning = false;
 function startGame() {
 
 playStartSound();
+resetBreathing();
 
   // Pelota al centro
   ballX = game.clientWidth / 2;

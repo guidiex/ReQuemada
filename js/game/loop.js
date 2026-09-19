@@ -8,6 +8,7 @@ function update() {
     checkWallCollisions();
     checkPaddleCollision();
     checkGameOver();
+    updateBreathing();
 
     ball.style.left = `${ballX}px`;
     ball.style.top = `${ballY}px`;
