@@ -1,112 +1,166 @@
+/* ========================================
+   REQUEMADA · GAME
+   ======================================== */
+
+
+/* ----------------------------------------
+   ÁREA DE JUEGO
+   ---------------------------------------- */
+
 #game {
+
   position: relative;
 
   width: 100%;
+
   height: 500px;
 
   overflow: hidden;
 
   background:
-  url("../assets/backgrounds/clouds-sky.png")
-  center / cover
-  no-repeat;
+    url("../assets/backgrounds/clouds-sky.png")
+    center / cover
+    no-repeat;
+
 }
 
- 
- #ball {
+
+/* ----------------------------------------
+   PELOTA
+   ---------------------------------------- */
+
+#ball {
+
   position: absolute;
 
   width: 26px;
+
   height: 26px;
 
   left: 50%;
+
   top: 50%;
 
   transform: translate(-50%, -50%);
 
   border-radius: 50%;
 
-  /* 03 · Lente */
+  /* Lente */
+
   background: transparent;
 
-  /* 09 · Contorno */
+  /* Contorno */
+
   border:
     1px solid
     rgba(255, 255, 255, 0.85);
 
-  /* 13 · Aura + 06 · Prisma */
+  /* Aura + prisma */
+
   box-shadow:
     -1px 0 3px rgba(120, 210, 255, 0.35),
      1px 0 3px rgba(255, 170, 220, 0.25),
      0 0 8px rgba(255, 255, 255, 0.35);
 
-backdrop-filter:
-  contrast(1.12) saturate(1.15);
+  backdrop-filter:
+    contrast(1.12)
+    saturate(1.15);
 
--webkit-backdrop-filter:
-  contrast(1.12) saturate(1.15);
+  -webkit-backdrop-filter:
+    contrast(1.12)
+    saturate(1.15);
 
   z-index: 10;
+
 }
 
 
+/* ----------------------------------------
+   PADDLE
+   ---------------------------------------- */
+
 #paddle {
+
   position: absolute;
 
   width: 120px;
+
   height: 20px;
 
   left: 50%;
+
   bottom: 28px;
 
   transform: translateX(-50%);
 
   background: #fff;
+
   border-radius: 20px;
+
 }
 
+
+/* ========================================
+   NUBES TRASERAS
+   ======================================== */
+
 #clouds-back {
+
   position: absolute;
 
   inset: 0;
 
   background:
     url("../assets/backgrounds/clouds-back.png")
-    center / cover
+    left center / cover
     repeat-x;
 
-  opacity: 0;
+  opacity: 0.45;
 
   pointer-events: none;
 
   animation:
-  cloudsBackMove 90s
-  ease-in-out
-  infinite
-  alternate;
+    cloudsBackMove
+    90s
+    ease-in-out
+    infinite
+    alternate;
+
 }
+
 
 @keyframes cloudsBackMove {
 
   from {
-    background-position: 0 center;
+
+    background-position:
+      left center;
+
   }
 
   to {
-    background-position: 100% center;
+
+    background-position:
+      right center;
+
   }
 
 }
 
 
+/* ========================================
+   NUBES DELANTERAS
+   ======================================== */
+
 #clouds-front {
+
   position: absolute;
 
   inset: 0;
 
   background:
     url("../assets/backgrounds/clouds-front.png")
-    center / cover
+    left center / cover
     repeat-x;
 
   opacity: 0.30;
@@ -114,34 +168,55 @@ backdrop-filter:
   pointer-events: none;
 
   animation:
-    cloudsFrontMove 14s
+    cloudsFrontMove
+    14s
     ease-in-out
     infinite
     alternate;
+
 }
+
 
 @keyframes cloudsFrontMove {
 
   from {
-    background-position: -5% center;
+
+    background-position:
+      left center;
+
   }
 
   to {
-    background-position: 8% center;
+
+    background-position:
+      right center;
+
   }
 
 }
 
+
+/* ========================================
+   CICLO DEL CIELO
+   ======================================== */
+
 #sky-cycle {
+
   position: absolute;
+
   inset: 0;
 
   background-image:
     url("../assets/backgrounds/sky-cycle.png");
 
-  background-size: auto 100%;
-  background-position: left center;
-  background-repeat: no-repeat;
+  background-size:
+    auto 100%;
+
+  background-position:
+    left center;
+
+  background-repeat:
+    repeat-x;
 
   opacity: 0.55;
 
@@ -150,25 +225,41 @@ backdrop-filter:
   pointer-events: none;
 
   animation:
-    skyCycleMove 300s
+    skyCycleMove
+    300s
     linear
     infinite;
+
 }
+
 
 @keyframes skyCycleMove {
 
   from {
-    background-position: 0 center;
+
+    background-position:
+      0 center;
+
   }
 
   to {
-    background-position: -2048px center;
+
+    background-position:
+      -2048px center;
+
   }
 
 }
 
+
+/* ========================================
+   LUZ / RESPIRACIÓN
+   ======================================== */
+
 #light-haze {
+
   position: absolute;
+
   inset: 0;
 
   background:
@@ -182,15 +273,24 @@ backdrop-filter:
   opacity: 0.5;
 
   pointer-events: none;
+
 }
 
+
+/* ========================================
+   AURA DE LA PELOTA
+   ======================================== */
+
 #ball-aura {
+
   position: absolute;
 
   width: 34px;
+
   height: 34px;
 
   left: 50%;
+
   top: 50%;
 
   transform:
@@ -211,12 +311,20 @@ backdrop-filter:
   pointer-events: none;
 
   z-index: 9;
+
 }
 
+
+/* ========================================
+   ESTELA DE LA PELOTA
+   ======================================== */
+
 .ball-echo {
+
   position: absolute;
 
   width: 26px;
+
   height: 26px;
 
   transform:
@@ -225,49 +333,64 @@ backdrop-filter:
   border-radius: 50%;
 
   border:
-  1px solid
-  rgba(255, 255, 200, 0.10);
+    1px solid
+    rgba(255, 255, 200, 0.10);
 
   box-shadow:
-  -2px 0 5px
-    rgba(120, 210, 255, 0.99),
-  2px 0 5px
-    rgba(255, 170, 220, 0.99),
-  0 0 9px
-    rgba(255, 255, 255, 0.99);
+    -2px 0 5px
+      rgba(120, 210, 255, 0.99),
+     2px 0 5px
+      rgba(255, 170, 220, 0.99),
+     0 0 9px
+      rgba(255, 255, 255, 0.99);
 
   opacity: 1;
 
   pointer-events: none;
 
   animation:
-    ballEchoFade 900ms
+    ballEchoFade
+    900ms
     ease-out
     forwards;
 
   z-index: 9;
+
 }
+
 
 @keyframes ballEchoFade {
 
   0% {
+
     opacity: 0.40;
+
     scale: 1;
+
   }
 
   35% {
+
     opacity: 0.25;
+
     scale: 1.05;
+
   }
 
   70% {
+
     opacity: 0.10;
+
     scale: 1.12;
+
   }
 
   100% {
+
     opacity: 0;
+
     scale: 1.20;
+
   }
 
 }
