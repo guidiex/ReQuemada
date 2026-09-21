@@ -84,7 +84,7 @@
   background:
     url("../assets/backgrounds/clouds-front.png")
     center / cover
-    repeat-x;
+    no-repeat;
 
   opacity: 0.30;
 
@@ -100,7 +100,7 @@
 @keyframes cloudsFrontMove {
 
   from {
-    background-position: -5% center;
+    background-position: 0% center;
   }
 
   to {
