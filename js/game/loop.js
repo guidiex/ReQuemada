@@ -17,7 +17,15 @@ function update() {
 
     ball.style.top =
       `${ballY}px`;
+    const ballAura =
+  document.getElementById("ball-aura");
 
+ballAura.style.left =
+  `${ballX}px`;
+
+ballAura.style.top =
+  `${ballY}px`;
+  
   }
 
   requestAnimationFrame(update);
