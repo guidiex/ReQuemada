@@ -23,7 +23,16 @@
 
   transform: translate(-50%, -50%);
 
-  background: #fff;
+  background: transparent;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 0 8px
+    rgba(255, 255, 255, 0.45);
+
   border-radius: 50%;
 }
 
@@ -38,8 +47,18 @@
 
   transform: translateX(-50%);
 
-  background: #fff;
-  border-radius: 20px;
+  background: transparent;
+
+border:
+  1px solid
+  rgba(255, 255, 255, 0.85);
+
+box-shadow:
+  0 0 8px
+  rgba(255, 255, 255, 0.45);
+
+border-radius: 999px;
+  
 }
 
 #clouds-back {
