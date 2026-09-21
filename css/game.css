@@ -58,10 +58,13 @@ box-shadow:
   rgba(255, 255, 255, 0.45);
 
 border-radius: 999px;
-  
+
 }
 
 #clouds-back {
+
+  filter: saturate(1.25) contrast(1.05);
+
   position: absolute;
 
   inset: 0;
@@ -96,6 +99,9 @@ border-radius: 999px;
 
 
 #clouds-front {
+
+  filter: saturate(1.35) contrast(1.08);
+
   position: absolute;
 
   inset: 0;
