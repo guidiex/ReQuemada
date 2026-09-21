@@ -12,20 +12,43 @@
   no-repeat;
 }
 
-#ball {
+ 
+ #ball {
   position: absolute;
 
-  width: 18px;
-  height: 18px;
+  width: 26px;
+  height: 26px;
 
   left: 50%;
   top: 50%;
 
   transform: translate(-50%, -50%);
 
-  background: #fff;
   border-radius: 50%;
+
+  /* 03 · Lente */
+  background: transparent;
+
+  /* 09 · Contorno */
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.85);
+
+  /* 13 · Aura + 06 · Prisma */
+  box-shadow:
+    -1px 0 3px rgba(120, 210, 255, 0.35),
+     1px 0 3px rgba(255, 170, 220, 0.25),
+     0 0 8px rgba(255, 255, 255, 0.35);
+
+backdrop-filter:
+  contrast(1.12) saturate(1.15);
+
+-webkit-backdrop-filter:
+  contrast(1.12) saturate(1.15);
+
+  z-index: 10;
 }
+
 
 #paddle {
   position: absolute;
@@ -159,4 +182,92 @@
   opacity: 0.5;
 
   pointer-events: none;
+}
+
+#ball-aura {
+  position: absolute;
+
+  width: 34px;
+  height: 34px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: transparent;
+
+  box-shadow:
+    0 0 10px
+      rgba(255, 255, 255, 0.45),
+    -3px 0 12px
+      rgba(120, 210, 255, 0.30),
+    3px 0 12px
+      rgba(255, 170, 220, 0.30);
+
+  pointer-events: none;
+
+  z-index: 9;
+}
+
+.ball-echo {
+  position: absolute;
+
+  width: 26px;
+  height: 26px;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border:
+  1px solid
+  rgba(255, 255, 200, 0.10);
+
+  box-shadow:
+  -2px 0 5px
+    rgba(120, 210, 255, 0.99),
+  2px 0 5px
+    rgba(255, 170, 220, 0.99),
+  0 0 9px
+    rgba(255, 255, 255, 0.99);
+
+  opacity: 1;
+
+  pointer-events: none;
+
+  animation:
+    ballEchoFade 900ms
+    ease-out
+    forwards;
+
+  z-index: 9;
+}
+
+@keyframes ballEchoFade {
+
+  0% {
+    opacity: 0.40;
+    scale: 1;
+  }
+
+  35% {
+    opacity: 0.25;
+    scale: 1.05;
+  }
+
+  70% {
+    opacity: 0.10;
+    scale: 1.12;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 1.20;
+  }
+
 }

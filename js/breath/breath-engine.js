@@ -14,59 +14,10 @@ const lightHaze =
   );
 
 
-// COLORES DE LA PELOTA
-
-const breathColors = {
-
-  rest: [
-    245,
-    245,
-    242
-  ],
-
-  inhale: [
-    175,
-    196,
-    204
-  ],
-
-  exhale: [
-    230,
-    216,
-    201
-  ]
-
-};
 
 
-// MEZCLAR DOS COLORES
 
-function mixColor(
-  from,
-  to,
-  progress
-) {
 
-  const color =
-    from.map(
-      (value, index) =>
-        Math.round(
-          value +
-          (
-            to[index] -
-            value
-          ) *
-          progress
-        )
-    );
-
-  return `rgb(
-    ${color[0]},
-    ${color[1]},
-    ${color[2]}
-  )`;
-
-}
 
 
 // ACTUALIZAR RESPIRACIÓN
@@ -104,13 +55,7 @@ function updateBreathing() {
         progress
       );
 
-    ball.style.backgroundColor =
-      mixColor(
-        breathColors.exhale,
-        breathColors.inhale,
-        progress
-      );
-
+    
     lightHaze.style.opacity =
       0.35 +
       (
@@ -135,12 +80,7 @@ function updateBreathing() {
         progress
       );
 
-    ball.style.backgroundColor =
-      mixColor(
-        breathColors.inhale,
-        breathColors.exhale,
-        progress
-      );
+    
 
     lightHaze.style.opacity =
       0.55 -
@@ -166,21 +106,14 @@ function updateBreathing() {
       phase.scale > 1
     ) {
 
-      ball.style.backgroundColor =
-        `rgb(
-          ${breathColors.inhale.join(",")}
-        )`;
+      
 
       lightHaze.style.opacity =
         0.55;
 
     } else {
 
-      ball.style.backgroundColor =
-        `rgb(
-          ${breathColors.exhale.join(",")}
-        )`;
-
+      
       lightHaze.style.opacity =
         0.35;
 
@@ -228,11 +161,7 @@ function resetBreathing() {
 
   ball.style.scale = 1;
 
-  ball.style.backgroundColor =
-    `rgb(
-      ${breathColors.exhale.join(",")}
-    )`;
-
+ 
   lightHaze.style.opacity =
     0.35;
 
