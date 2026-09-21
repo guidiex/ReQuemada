@@ -75,7 +75,7 @@ backdrop-filter:
     center / cover
     repeat-x;
 
-  opacity: 0.45;
+  opacity: 0;
 
   pointer-events: none;
 
@@ -109,7 +109,7 @@ backdrop-filter:
     center / cover
     repeat-x;
 
-  opacity: 0;
+  opacity: 0.30;
 
   pointer-events: none;
 
