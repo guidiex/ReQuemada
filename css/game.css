@@ -159,9 +159,9 @@
   inset: 0;
 
   background:
-    url("../assets/backgrounds/clouds-front.png")
-    left center / cover
-    repeat-x;
+  url("../assets/backgrounds/clouds-front.png")
+  left center / cover
+  no-repeat;
 
   opacity: 0.30;
 
